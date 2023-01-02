@@ -9,6 +9,9 @@ import UIKit
 
 class BookDetailCellTableViewCell: UITableViewCell {
 
+    
+    //MARK: - Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
