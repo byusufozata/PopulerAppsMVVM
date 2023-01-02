@@ -7,12 +7,12 @@
 
 import UIKit
 
-class BookListViewModel {
+class AppListViewModel {
     
     //MARK: - Api Functions
     func callBookListApi() {
         
-        NetworkMenager.inst.bookListApi()
+        NetworkMenager.inst.appListApi()
     }
 
 }

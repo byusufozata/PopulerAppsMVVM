@@ -7,15 +7,15 @@
 
 import UIKit
 
-class BookListVC: UIViewController {
+class AppListVC: UIViewController {
     
     //MARK: - Outlet
     
-    @IBOutlet weak var tableViewBooks: UITableView!
+    @IBOutlet weak var tableViewApps: UITableView!
     
     //MARK: - Veriable
     
-    var bookListViewModel: BookListViewModel = BookListViewModel()
+    var bookListViewModel: AppListViewModel = AppListViewModel()
     
     //MARK: - Life Cycle
     
@@ -29,7 +29,7 @@ class BookListVC: UIViewController {
 
 //MARK: - UITableViewDelegate
 
-extension BookListVC: UITableViewDelegate {
+extension AppListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
@@ -37,7 +37,7 @@ extension BookListVC: UITableViewDelegate {
 
 //MARK: - UITableViewDataSource
 
-extension BookListVC: UITableViewDataSource {
+extension AppListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         11
     }

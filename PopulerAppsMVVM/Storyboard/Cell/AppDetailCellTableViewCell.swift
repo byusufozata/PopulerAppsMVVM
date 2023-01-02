@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookDetailCellTableViewCell: UITableViewCell {
+class AppDetailCellTableViewCell: UITableViewCell {
 
     
     //MARK: - Life Cycle

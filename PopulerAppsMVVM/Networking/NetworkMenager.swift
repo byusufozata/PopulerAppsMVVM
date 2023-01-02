@@ -19,7 +19,17 @@ class NetworkMenager {
     
     //MARK: - Api
     
-    func bookListApi() {
+    func appListApi() {
+        
+        let appListApi = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/10/apps.json"
+        if let url = URL(string: appListApi) {
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                guard let data = data else { return }
+                
+                
+            }
+            task.resume()
+        }
         
     }
         
