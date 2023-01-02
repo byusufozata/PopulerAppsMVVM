@@ -13,11 +13,15 @@ class BookListVC: UIViewController {
     
     @IBOutlet weak var tableViewBooks: UITableView!
     
+    //MARK: - Veriable
+    
+    var bookListViewModel: BookListViewModel = BookListViewModel()
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        bookListViewModel.callBookListApi()
     }
     
 
