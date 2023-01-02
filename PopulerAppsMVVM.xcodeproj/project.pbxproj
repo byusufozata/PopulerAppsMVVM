@@ -56,11 +56,10 @@
 		C1D189792963690B0063C377 /* PopulerAppsMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				C1D18991296371640063C377 /* Resources */,
+				C1D18990296371570063C377 /* ViewController */,
+				C1D1898F296371480063C377 /* View */,
 				C1D1898E296370AA0063C377 /* AppDelegate */,
-				C1D1897E2963690B0063C377 /* ViewController.swift */,
-				C1D189802963690B0063C377 /* Main.storyboard */,
-				C1D189832963690C0063C377 /* Assets.xcassets */,
-				C1D189852963690C0063C377 /* LaunchScreen.storyboard */,
 				C1D189882963690C0063C377 /* Info.plist */,
 			);
 			path = PopulerAppsMVVM;
@@ -73,6 +72,31 @@
 				C1D1897C2963690B0063C377 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C1D1898F296371480063C377 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C1D189802963690B0063C377 /* Main.storyboard */,
+				C1D189852963690C0063C377 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C1D18990296371570063C377 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1D1897E2963690B0063C377 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1D18991296371640063C377 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C1D189832963690C0063C377 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
