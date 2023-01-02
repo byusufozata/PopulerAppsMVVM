@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		C1D1897B2963690B0063C377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1897A2963690B0063C377 /* AppDelegate.swift */; };
 		C1D1897D2963690B0063C377 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1897C2963690B0063C377 /* SceneDelegate.swift */; };
-		C1D1897F2963690B0063C377 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1897E2963690B0063C377 /* ViewController.swift */; };
+		C1D1897F2963690B0063C377 /* BookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1897E2963690B0063C377 /* BookListVC.swift */; };
 		C1D189822963690B0063C377 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D189802963690B0063C377 /* Main.storyboard */; };
 		C1D189842963690C0063C377 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D189832963690C0063C377 /* Assets.xcassets */; };
 		C1D189872963690C0063C377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D189852963690C0063C377 /* LaunchScreen.storyboard */; };
+		C1D18997296374640063C377 /* BookDetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D18995296374640063C377 /* BookDetailCellTableViewCell.swift */; };
+		C1D18998296374640063C377 /* BookDetailCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D18996296374640063C377 /* BookDetailCellTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C1D189772963690B0063C377 /* PopulerAppsMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopulerAppsMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D1897A2963690B0063C377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1D1897C2963690B0063C377 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C1D1897E2963690B0063C377 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1D1897E2963690B0063C377 /* BookListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListVC.swift; sourceTree = "<group>"; };
 		C1D189812963690B0063C377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1D189832963690C0063C377 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1D189862963690C0063C377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1D189882963690C0063C377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1D18995296374640063C377 /* BookDetailCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailCellTableViewCell.swift; sourceTree = "<group>"; };
+		C1D18996296374640063C377 /* BookDetailCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailCellTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		C1D189792963690B0063C377 /* PopulerAppsMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				C1D18993296373B90063C377 /* Storyboard */,
+				C1D18992296371A80063C377 /* ViewModel */,
 				C1D18991296371640063C377 /* Resources */,
 				C1D18990296371570063C377 /* ViewController */,
 				C1D1898F296371480063C377 /* View */,
@@ -77,8 +83,6 @@
 		C1D1898F296371480063C377 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C1D189802963690B0063C377 /* Main.storyboard */,
-				C1D189852963690C0063C377 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -86,7 +90,7 @@
 		C1D18990296371570063C377 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C1D1897E2963690B0063C377 /* ViewController.swift */,
+				C1D1897E2963690B0063C377 /* BookListVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -97,6 +101,32 @@
 				C1D189832963690C0063C377 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C1D18992296371A80063C377 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C1D18993296373B90063C377 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C1D18994296373FB0063C377 /* Cell */,
+				C1D189802963690B0063C377 /* Main.storyboard */,
+				C1D189852963690C0063C377 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		C1D18994296373FB0063C377 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C1D18995296374640063C377 /* BookDetailCellTableViewCell.swift */,
+				C1D18996296374640063C377 /* BookDetailCellTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1D189872963690C0063C377 /* LaunchScreen.storyboard in Resources */,
+				C1D18998296374640063C377 /* BookDetailCellTableViewCell.xib in Resources */,
 				C1D189842963690C0063C377 /* Assets.xcassets in Resources */,
 				C1D189822963690B0063C377 /* Main.storyboard in Resources */,
 			);
@@ -170,9 +201,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1D1897F2963690B0063C377 /* ViewController.swift in Sources */,
+				C1D1897F2963690B0063C377 /* BookListVC.swift in Sources */,
 				C1D1897B2963690B0063C377 /* AppDelegate.swift in Sources */,
 				C1D1897D2963690B0063C377 /* SceneDelegate.swift in Sources */,
+				C1D18997296374640063C377 /* BookDetailCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
