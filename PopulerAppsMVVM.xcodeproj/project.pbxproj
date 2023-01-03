@@ -14,9 +14,10 @@
 		C1D189842963690C0063C377 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D189832963690C0063C377 /* Assets.xcassets */; };
 		C1D189872963690C0063C377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D189852963690C0063C377 /* LaunchScreen.storyboard */; };
 		C1D18997296374640063C377 /* AppDetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D18995296374640063C377 /* AppDetailCellTableViewCell.swift */; };
-		C1D18998296374640063C377 /* BookDetailCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D18996296374640063C377 /* BookDetailCellTableViewCell.xib */; };
+		C1D18998296374640063C377 /* AppDetailCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D18996296374640063C377 /* AppDetailCellTableViewCell.xib */; };
 		C1D1899B296375DD0063C377 /* AppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1899A296375DD0063C377 /* AppListViewModel.swift */; };
 		C1D1899E296376D50063C377 /* NetworkMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1899D296376D50063C377 /* NetworkMenager.swift */; };
+		C1D189A12963799C0063C377 /* ApiList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D189A02963799C0063C377 /* ApiList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,10 @@
 		C1D189862963690C0063C377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1D189882963690C0063C377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1D18995296374640063C377 /* AppDetailCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCellTableViewCell.swift; sourceTree = "<group>"; };
-		C1D18996296374640063C377 /* BookDetailCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailCellTableViewCell.xib; sourceTree = "<group>"; };
+		C1D18996296374640063C377 /* AppDetailCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailCellTableViewCell.xib; sourceTree = "<group>"; };
 		C1D1899A296375DD0063C377 /* AppListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewModel.swift; sourceTree = "<group>"; };
 		C1D1899D296376D50063C377 /* NetworkMenager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMenager.swift; sourceTree = "<group>"; };
+		C1D189A02963799C0063C377 /* ApiList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		C1D189792963690B0063C377 /* PopulerAppsMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				C1D1899F2963798C0063C377 /* Model */,
 				C1D1899C296376B40063C377 /* Networking */,
 				C1D18993296373B90063C377 /* Storyboard */,
 				C1D18992296371A80063C377 /* ViewModel */,
@@ -130,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				C1D18995296374640063C377 /* AppDetailCellTableViewCell.swift */,
-				C1D18996296374640063C377 /* BookDetailCellTableViewCell.xib */,
+				C1D18996296374640063C377 /* AppDetailCellTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -149,6 +152,14 @@
 				C1D1899D296376D50063C377 /* NetworkMenager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C1D1899F2963798C0063C377 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1D189A02963799C0063C377 /* ApiList.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1D189872963690C0063C377 /* LaunchScreen.storyboard in Resources */,
-				C1D18998296374640063C377 /* BookDetailCellTableViewCell.xib in Resources */,
+				C1D18998296374640063C377 /* AppDetailCellTableViewCell.xib in Resources */,
 				C1D189842963690C0063C377 /* Assets.xcassets in Resources */,
 				C1D189822963690B0063C377 /* Main.storyboard in Resources */,
 			);
@@ -225,6 +236,7 @@
 			files = (
 				C1D1899E296376D50063C377 /* NetworkMenager.swift in Sources */,
 				C1D1897F2963690B0063C377 /* AppListVC.swift in Sources */,
+				C1D189A12963799C0063C377 /* ApiList.swift in Sources */,
 				C1D1897B2963690B0063C377 /* AppDelegate.swift in Sources */,
 				C1D1897D2963690B0063C377 /* SceneDelegate.swift in Sources */,
 				C1D18997296374640063C377 /* AppDetailCellTableViewCell.swift in Sources */,

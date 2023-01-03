@@ -19,19 +19,21 @@ class NetworkMenager {
     
     //MARK: - Api
     
-    func appListApi() {
-        
-        let appListApi = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/10/apps.json"
-        if let url = URL(string: appListApi) {
-            let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                guard let data = data else { return }
-                
-                
+    func appListApi(completion: @escaping ([ApiList]) -> Void) {
+        let baseURL = "https://rss.applemarketingtools.com/api/v2/us/apps//10/albums.json"
+        let url = URL(string: baseURL)!
+        let session = URLSession(configuration: .default)
+        let dataTask = session.dataTask(with: url) { data, response, error in
+            let jsonDecoder = JSONDecoder()
+            if let data = data {
+                if let responseString = try? jsonDecoder.decode([ApiList].self, from: data) {
+                    let results = responseString
+                    completion(results)
+                    print(results)
+                }
             }
-            task.resume()
         }
-        
+        dataTask.resume()
     }
-        
-  
+
 }

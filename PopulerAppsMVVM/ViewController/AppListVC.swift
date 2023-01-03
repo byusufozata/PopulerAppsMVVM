@@ -21,7 +21,13 @@ class AppListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bookListViewModel.callBookListApi()
+        
+        tableViewApps.register(UINib(nibName: "AppDetailCellTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailCellTableViewCell")
+        bookListViewModel.callBookListApi { model in
+            DispatchQueue.main.async {
+                self.tableViewApps.reloadData()
+            }
+        }
     }
     
 
@@ -43,6 +49,9 @@ extension AppListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppDetailCellTableViewCell") as? AppDetailCellTableViewCell else {
+            fatalError("cell is not dequed correctly ")
+        }
+        return cell
     }
 }
