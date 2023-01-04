@@ -19,7 +19,7 @@ class NetworkMenager {
     
     //MARK: - Api
     func loadData(completion: @escaping (ApiList) -> Void) {
-        guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps//10/albums.json") else  {return}
+        guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/podcasts/top/25/podcasts.json") else  {return}
                 
                 URLSession.shared.dataTask(with: url) { ( data, response, error) in
                     if let error = error {
@@ -33,7 +33,6 @@ class NetworkMenager {
                     }
                     
                     guard let result = String(data: data, encoding: .utf8) else { return }
-                    //   print(result)
 
                     do {
                         let decoder = JSONDecoder()

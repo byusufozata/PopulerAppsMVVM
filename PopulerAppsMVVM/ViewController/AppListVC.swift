@@ -21,6 +21,9 @@ class AppListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bookListViewModel.callBookListApi { modal in
+            print(modal)
+        }
         tableViewApps.register(UINib(nibName: "AppDetailCellTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailCellTableViewCell")
 
     }

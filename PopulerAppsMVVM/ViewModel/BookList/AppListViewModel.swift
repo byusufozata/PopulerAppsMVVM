@@ -10,15 +10,16 @@ import UIKit
 class AppListViewModel {
     
     //MARK: - Veriable
-    var apiListModel = [ApiList]()
+    var apiListModel: ApiList?
     
     //MARK: - Api Functions
-    func callBookListApi(_ completion: @escaping ((_ modal: [ApiList]) -> Void)) {
+    func callBookListApi(_ completion: @escaping ((_ modal: ApiList) -> Void)) {
         
-        NetworkMenager.inst.appListApi { appListModel in
-            self.apiListModel = appListModel
-            completion(appListModel)
-            print(appListModel)
+        NetworkMenager.inst.loadData { loadData in
+            self.apiListModel = loadData
+            
+            completion(loadData)
+            print(self.apiListModel)
         
         }
     }

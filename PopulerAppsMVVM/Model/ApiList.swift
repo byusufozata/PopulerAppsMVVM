@@ -3,18 +3,18 @@ import Foundation
 
 
 
-struct ApiList: Decodable {
+struct ApiList: Codable {
     let feed: Feed
 }
 
 // MARK: - Feed
-struct Feed: Decodable {
+struct Feed: Codable {
     let results: [Result]
 }
 
 
 // MARK: - Result
-struct Result: Decodable {
+struct Result: Codable {
     let artistName: String
     let id: String
     let name: String
@@ -25,7 +25,7 @@ struct Result: Decodable {
 }
 
 // MARK: - Genre
-struct Genre: Decodable {
+struct Genre: Codable {
     let genreID, name: String?
     let url: String?
 
