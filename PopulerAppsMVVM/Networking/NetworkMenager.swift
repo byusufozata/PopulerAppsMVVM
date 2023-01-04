@@ -18,22 +18,33 @@ class NetworkMenager {
     private init() {  }
     
     //MARK: - Api
-    
-    func appListApi(completion: @escaping ([ApiList]) -> Void) {
-        let baseURL = "https://rss.applemarketingtools.com/api/v2/us/apps//10/albums.json"
-        let url = URL(string: baseURL)!
-        let session = URLSession(configuration: .default)
-        let dataTask = session.dataTask(with: url) { data, response, error in
-            let jsonDecoder = JSONDecoder()
-            if let data = data {
-                if let responseString = try? jsonDecoder.decode([ApiList].self, from: data) {
-                    let results = responseString
-                    completion(results)
-                    print(results)
-                }
-            }
-        }
-        dataTask.resume()
-    }
+    func loadData(completion: @escaping (ApiList) -> Void) {
+        guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps//10/albums.json") else  {return}
+                
+                URLSession.shared.dataTask(with: url) { ( data, response, error) in
+                    if let error = error {
+                        print("Something went wrong the request: \(error.localizedDescription)")
+                        return
+                    }
+                    
+                    guard let data = data else {
+                        print("No data found")
+                        return
+                    }
+                    
+                    guard let result = String(data: data, encoding: .utf8) else { return }
+                    //   print(result)
 
+                    do {
+                        let decoder = JSONDecoder()
+                        let result = try decoder.decode(ApiList.self, from: data)
+                        completion(result)
+                        print(result)
+                    } catch let error {
+                        print("Cannot conver the response to the required objects: \(error.localizedDescription)")
+                        
+                    }
+                }.resume()
+    }
+    
 }
