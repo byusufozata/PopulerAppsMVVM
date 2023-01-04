@@ -12,7 +12,6 @@ class AppListVC: UIViewController {
     //MARK: - Outlet
     
     @IBOutlet weak var tableViewApps: UITableView!
-    
     //MARK: - Veriable
     
     var bookListViewModel: AppListViewModel = AppListViewModel()
@@ -23,14 +22,8 @@ class AppListVC: UIViewController {
         super.viewDidLoad()
         
         tableViewApps.register(UINib(nibName: "AppDetailCellTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailCellTableViewCell")
-        bookListViewModel.callBookListApi { model in
-            DispatchQueue.main.async {
-                self.tableViewApps.reloadData()
-            }
-        }
-    }
-    
 
+    }
 }
 
 //MARK: - UITableViewDelegate

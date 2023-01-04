@@ -1,35 +1,36 @@
-//
-//  AppList.swift
-//  PopulerAppsMVVM
-//
-//  Created by YUSUF ÖZATA on 2.01.2023.
-//
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let appList = try? JSONDecoder().decode(AppList.self, from: jsonData)
 
 import Foundation
 
-// MARK: - AppList
-struct ApiList: Codable {
-    let feed: FeedClass
+
+
+struct ApiList: Decodable {
+    let feed: Feed
 }
 
-struct FeedClass: Codable {
+// MARK: - Feed
+struct Feed: Decodable {
     let results: [Result]
 }
 
-struct Result: Codable {
-    var name: String
-    var date: String
-    var image: String
+
+// MARK: - Result
+struct Result: Decodable {
+    let artistName: String
+    let id: String
+    let name: String
+    let artworkUrl100: String
+    let genres: [Genre]?
+    let url: String?
+    let contentAdvisoryRating: String?
+}
+
+// MARK: - Genre
+struct Genre: Decodable {
+    let genreID, name: String?
+    let url: String?
 
     enum CodingKeys: String, CodingKey {
-        case name = "artistName"
-        case date = "releaseDate"
-        case image = "artworkUrl100"
-        
+        case genreID
+        case name, url
     }
 }

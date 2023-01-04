@@ -18,6 +18,7 @@ class AppListViewModel {
         NetworkMenager.inst.appListApi { appListModel in
             self.apiListModel = appListModel
             completion(appListModel)
+            print(appListModel)
         
         }
     }
