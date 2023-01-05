@@ -7,26 +7,25 @@
 
 import UIKit
 
+protocol AppListVCInterface: AnyObject {
+   func prepareTableView()
+}
+
 class AppListVC: UIViewController {
     
     //MARK: - Outlet
-    
     @IBOutlet weak var tableViewApps: UITableView!
     //MARK: - Veriable
-    
-    var bookListViewModel: AppListViewModel = AppListViewModel()
+    private lazy var bookListViewModel = AppListViewModel()
     
     //MARK: - Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bookListViewModel.callBookListApi { modal in
-            print(modal)
-        }
-        tableViewApps.register(UINib(nibName: "AppDetailCellTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailCellTableViewCell")
+        bookListViewModel.view = self
+        bookListViewModel.viewDidLoad()
 
-    }
+        }
 }
 
 //MARK: - UITableViewDelegate
@@ -49,5 +48,15 @@ extension AppListVC: UITableViewDataSource {
             fatalError("cell is not dequed correctly ")
         }
         return cell
+    }
+
+}
+
+extension AppListVC: AppListVCInterface {
+    func prepareTableView() {
+        bookListViewModel.callBookListApi { modal in
+            print(modal)
+        }
+        tableViewApps.register(UINib(nibName: "AppDetailCellTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailCellTableViewCell")
     }
 }
